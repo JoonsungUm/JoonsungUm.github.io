@@ -29,11 +29,16 @@ const getCategories = async () => {
   )
 }
 
-const getFileName = title =>
-  title
+const getFileName = title => {
+  const date = dateFns.format(new Date(), 'YYYY-MM-DD')
+  const fileName = title
     .split(' ')
     .join('-')
     .toLowerCase()
+
+  return `${date}-${fileName}`
+}
+
 
 const refineContents = rawContents =>
   matter
@@ -118,7 +123,7 @@ const fetchTitle = async category => {
   return title
 }
 
-module.exports = (async function() {
+module.exports = (async function () {
   const date = dateFns.format(new Date(), DATE_FORMAT)
 
   log.info('Create new post:: ', date)

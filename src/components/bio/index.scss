@@ -26,7 +26,7 @@
     font-weight: bolder;
     border-radius: 8px;
     transform-origin: center;
-    animation: flutter 2s infinite linear;
+    animation: flutter 5s infinite linear;
   }
 
   .author-introduction {
@@ -53,16 +53,16 @@
   0% {
     transform: rotate(0deg);
   }
-  35% {
+  48% {
     transform: rotate(0deg);
   }
-  40% {
-    transform: rotate(-5deg);
+  49% {
+    transform: rotate(-2deg);
   }
-  60% {
-    transform: rotate(5deg);
+  51% {
+    transform: rotate(2deg);
   }
-  65% {
+  52% {
     transform: rotate(0deg);
   }
   100% {
@@ -74,16 +74,16 @@
   0% {
     transform: rotate(0deg);
   }
-  35% {
+  48% {
     transform: rotate(0deg);
   }
-  40% {
-    transform: rotate(-5deg);
+  49% {
+    transform: rotate(-2deg);
   }
-  60% {
-    transform: rotate(5deg);
+  51% {
+    transform: rotate(2deg);
   }
-  65% {
+  52% {
     transform: rotate(0deg);
   }
   100% {
