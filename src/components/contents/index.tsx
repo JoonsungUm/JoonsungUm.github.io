@@ -18,7 +18,7 @@ export const Contents: React.FC<ContentsProps> = ({ posts, countOfInitialPost, c
           category === CategoryType.ALL ||
           node.frontmatter.category === category
       )
-      .slice(0, count * countOfInitialPost), []
+      .slice(0, count * countOfInitialPost), [category]
   )
 
   return (
