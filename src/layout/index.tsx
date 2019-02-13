@@ -14,7 +14,7 @@ interface LayoutProps {
   title: string
 }
 
-export const Layout: React.FC<LayoutProps> = ({ pathPrefix, location, title, children }) => (
+export const Layout: React.FC<LayoutProps> = ({ pathPrefix = `/`, location, title, children }) => (
   <React.Fragment>
     <Top title={title} location={location} rootPath={pathPrefix} />
     <div
