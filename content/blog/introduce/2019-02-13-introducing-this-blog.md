@@ -28,7 +28,7 @@ category: introduce
 
 Github Pages는 [Jekyll • Simple, blog-aware, static sites \| Transform your plain text into static websites and blogs](https://jekyllrb.com/) 기반일 때부터 간단한 외주 의뢰에도 사용할 정도로 친숙하지만, 예전에 어떤 Gem을 사용하느냐에 따라 빌드가 잘 되지 않았던 기억과 Ruby에 그리 친숙하지 않다는 점 때문에 계속 Jekyll을 사용하고 싶지는 않았다.
 
-[Netlify: All-in-one platform for automating modern web projects.](https://www.netlify.com/) 는 최근 몇 번 사용해보고 반한 정도로 좋은 서비스이기는 하나 [GitHub - netlify/netlify-cms: A CMS for Static Site Generators](https://github.com/netlify/netlify-cms)의 속도가 너무 느렸고 커스터마이징이 힘들고 손이 많이 갔다. Netlify의 CMS를 사용하지 않고 커스텀 도메인을 사용 할 예정도 없다고 가정하면 결국 Github에 소스를 올리는 것은 필수이니 신생 Netlify의 캘리포니아 근처의 인스턴스에서 호스팅하느니 글로~발한 마이크로소프트 소속 Github의 인스턴스를 사용하는 것이 낫다고 생각되어 Github Pages에 호스팅하고 주어지는 기본 도메인을 사용하는 것으로 결론 내렸다.
+[Netlify: All-in-one platform for automating modern web projects.](https://www.netlify.com/) 는 최근 몇 번 사용해보고 반할 정도로 좋은 서비스이기는 하나 [GitHub - netlify/netlify-cms: A CMS for Static Site Generators](https://github.com/netlify/netlify-cms)의 속도가 너무 느렸고 커스터마이징이 힘들고 손이 많이 갔다. Netlify의 CMS를 사용하지 않고 커스텀 도메인을 사용할 예정도 없다고 가정하면 굳이 신생 기업이라 인스턴스가 미국 중심일(실제로 그런지는 모름.) Netlify를 사용할만한 이유는 없다. 결국 Github에 소스를 올리는 것은 필수이니 글로~발한 마이크로소프트 소속 Github의 리소스를 사용하는 것이 낫다고 생각되어 Github Pages에 호스팅하고 주어지는 기본 도메인을 사용하는 것으로 결론 내렸다.
 
 정적 사이트 프레임워크는 [GatsbyJS](https://www.gatsbyjs.org/)로 큰 고민 없이 정했는데 React + TypeScript(Optional) + GraphQL 이면 친해 두는 것이 여러모로 좋다고 판단되었기 때문이다. :lying_face:
 

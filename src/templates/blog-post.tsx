@@ -6,7 +6,7 @@ import { Layout } from '../layout'
 import { Head } from '../components/head'
 import { PostTitle } from '../components/post-title'
 import { PostContainer } from '../components/post-container'
-import { SocialShare } from '../components/social-share'
+// import { SocialShare } from '../components/social-share'
 import { SponsorButton } from '../components/sponsor-button'
 import { Bio } from '../components/bio'
 import { PostNavigator } from '../components/post-navigator'
@@ -25,7 +25,8 @@ const BlogPost: React.FC<BlogPostProps> = ({ data, pageContext, location }) => {
   const { pathPrefix } = data
   const post = data.markdownRemark
   const metaData = data.site.siteMetadata
-  const { title, comment, siteUrl, author, sponsor } = metaData
+  // const { title, comment, siteUrl, author, sponsor } = metaData
+  const { title, comment, siteUrl, sponsor } = metaData
   const { disqusShortName, utterances } = comment
 
   return (
