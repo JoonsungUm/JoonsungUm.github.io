@@ -7,8 +7,8 @@ import './index.scss'
 
 interface CategoryProps {
   categories: string[]
-  category: any
-  selectCategory: any
+  category: string
+  selectCategory: (category: string) => void
 }
 
 export const Category: React.FC<CategoryProps> = ({ categories, category, selectCategory }) => (

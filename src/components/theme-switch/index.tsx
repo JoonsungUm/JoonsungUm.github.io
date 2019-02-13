@@ -25,7 +25,7 @@ function toggleTheme(theme: ThemeType) {
   }
 }
 
-export const ThemeSwitch = () => {
+export const ThemeSwitch: React.FC = () => {
   const [checked, setChecked] = useState(false)
 
   const handleChange = (checked: boolean) => {
