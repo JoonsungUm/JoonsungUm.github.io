@@ -33,7 +33,7 @@ const BlogPost: React.FC<BlogPostProps> = ({ data, pageContext, location }) => {
       <Head title={post.frontmatter.title} description={post.excerpt} />
       <PostTitle title={post.frontmatter.title} />
       <PostContainer html={post.html} />
-      <SocialShare title={post.frontmatter.title} author={author} />
+      {/* <SocialShare title={post.frontmatter.title} author={author} /> */}
       {!!sponsor.buyMeACoffeeId && (
         <SponsorButton sponsorId={sponsor.buyMeACoffeeId} />
       )}
