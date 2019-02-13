@@ -1,0 +1,1 @@
+{"data":{"site":{"pathPrefix":"","siteMetadata":{"title":"Bee starter","configs":{"countOfInitialPost":10}}},"allMarkdownRemark":{"edges":[{"node":{"excerpt":"블로그를 만드는 과정에서 느낀점을 적어보았다. 서비스형 블로그 vs…","fields":{"slug":"/introduce/2019-02-13-introduce-myself/"},"frontmatter":{"date":"February 13, 2019","title":"Introduce myself","category":"introduce"}}}]}},"pageContext":{}}
