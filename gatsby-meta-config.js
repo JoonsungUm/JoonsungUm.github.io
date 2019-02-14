@@ -5,6 +5,7 @@ module.exports = {
   introduction: `엄준성입니다.`,
 
   siteUrl: ``, // Your blog site url
+  locale: `ko`,
   social: {
     twitter: ``, // Your Twitter account
     github: `JoonsungUm`, // Your GitHub account
