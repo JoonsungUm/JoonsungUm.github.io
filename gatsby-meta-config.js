@@ -4,6 +4,7 @@ module.exports = {
   author: `[Your Name]`,
   introduction: `I explain with words and code. I explain with words and code. I explain with words and code.`,
   siteUrl: ``, // Your blog site url
+  locale: `ko`,
   social: {
     twitter: ``, // Your Twitter account
     github: ``, // Your GitHub account

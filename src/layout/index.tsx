@@ -15,7 +15,7 @@ interface LayoutProps {
 }
 
 export const Layout: React.FC<LayoutProps> = ({ pathPrefix = `/`, location, title, children }) => (
-  <React.Fragment>
+  <>
     <Top title={title} location={location} rootPath={pathPrefix} />
     <div
       style={{
@@ -30,6 +30,5 @@ export const Layout: React.FC<LayoutProps> = ({ pathPrefix = `/`, location, titl
       {children}
       <Footer />
     </div>
-  </React.Fragment>
+  </>
 )
-

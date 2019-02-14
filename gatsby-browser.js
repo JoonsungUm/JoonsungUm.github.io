@@ -30,3 +30,10 @@ exports.onInitialClientRender = () => {
     })(document, 'script', 'facebook-jssdk')
   }
 }
+
+const ReactIntl = require('react-intl')
+const localeData = require('react-intl/locale-data/ko')
+
+exports.onClientEntry = () => {
+  ReactIntl.addLocaleData(localeData)
+}

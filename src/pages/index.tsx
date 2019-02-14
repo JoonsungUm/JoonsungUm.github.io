@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react'
 import { graphql } from 'gatsby'
 import _ from 'lodash'
+import { IntlProvider } from 'react-intl'
 
 import { Layout } from '../layout'
 import { Bio } from '../components/bio'
@@ -47,21 +48,23 @@ export default ({ data, location }: any) => {
   }
 
   return (
-    <Layout pathPrefix={pathPrefix} location={location} title={siteMetadata.title}>
-      <Head title={HOME_TITLE} keywords={siteMetadata.keywords} />
-      <Bio />
-      <Category
-        categories={categories}
-        category={category}
-        selectCategory={selectCategory}
-      />
-      <Contents
-        posts={posts}
-        countOfInitialPost={countOfInitialPost}
-        count={count}
-        category={category}
-      />
-    </Layout>
+    <IntlProvider locale={siteMetadata.locale}>
+      <Layout pathPrefix={pathPrefix} location={location} title={siteMetadata.title}>
+        <Head title={HOME_TITLE} keywords={siteMetadata.keywords} />
+        <Bio />
+        <Category
+          categories={categories}
+          category={category}
+          selectCategory={selectCategory}
+        />
+        <Contents
+          posts={posts}
+          countOfInitialPost={countOfInitialPost}
+          count={count}
+          category={category}
+        />
+      </Layout>
+    </IntlProvider>
   )
 }
 
@@ -71,6 +74,7 @@ export const pageQuery = graphql`
       pathPrefix
       siteMetadata {
         title
+        locale
         configs {
           countOfInitialPost
         }
@@ -82,6 +86,7 @@ export const pageQuery = graphql`
     ) {
       edges {
         node {
+          timeToRead
           excerpt
           fields {
             slug
