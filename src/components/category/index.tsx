@@ -5,17 +5,17 @@ import { rhythm } from '../../utils/typography'
 
 import './index.scss'
 
-interface CategoryProps {
+type CategoryProps = {
   categories: string[]
   category: string
   selectCategory: (category: string) => void
 }
 
-export const Category: React.FC<CategoryProps> = ({
+export const Category = ({
   categories,
   category,
   selectCategory,
-}) => (
+}: CategoryProps) => (
   <ul
     className="category-container"
     role="tablist"

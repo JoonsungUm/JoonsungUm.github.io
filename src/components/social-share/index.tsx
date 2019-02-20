@@ -1,17 +1,17 @@
-import React from 'react'
+import React, { FormEvent } from 'react'
 import { FacebookIcon } from './facebook-icon'
 import { TwitterIcon } from './twitter-icon'
 import { shareToTwitter, shareToFacebook } from '../../utils/share'
 
 import './index.scss'
 
-interface SocialShareProps {
+type SocialShareProps = {
   title: string
   author: string
 }
 
-export const SocialShare: React.FC<SocialShareProps> = ({ title, author }) => {
-  const onClickTwitterIcon = (e: any) => {
+export const SocialShare = ({ title, author }: SocialShareProps) => {
+  const onClickTwitterIcon = (e: FormEvent) => {
     e.preventDefault()
 
     return shareToTwitter(
@@ -20,7 +20,7 @@ export const SocialShare: React.FC<SocialShareProps> = ({ title, author }) => {
     )
   }
 
-  const onClickFacebookIcon = (e: any) => {
+  const onClickFacebookIcon = (e: FormEvent) => {
     e.preventDefault()
     return shareToFacebook(window.location.href)
   }

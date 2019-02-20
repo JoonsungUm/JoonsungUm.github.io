@@ -4,13 +4,13 @@ import { GitHubIcon } from '../social-share/github-icon'
 
 import './index.scss'
 
-interface TopProps {
+type TopProps = {
   title: string
   location: Location
   rootPath: string
 }
 
-export const Top: React.FC<TopProps> = ({ title, location, rootPath }) => {
+export const Top = ({ title, location, rootPath }: TopProps) => {
   const isRoot = location.pathname === rootPath
   return (
     <div className="top">

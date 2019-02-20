@@ -5,11 +5,11 @@ import { PostDateAndLength } from '../post-date-and-length'
 
 import './index.scss'
 
-interface ThumbnailItemProps {
+type ThumbnailItemProps = {
   node: any
 }
 
-export const ThumbnailItem: React.FC<ThumbnailItemProps> = ({ node }: any) => (
+export const ThumbnailItem = ({ node }: ThumbnailItemProps) => (
   <Link className={`thumbnail ${TARGET_CLASS}`} to={node.fields.slug}>
     <div key={node.fields.slug}>
       <h3>{node.frontmatter.title || node.fields.slug}</h3>

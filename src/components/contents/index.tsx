@@ -3,19 +3,19 @@ import React, { useMemo } from 'react'
 import { ThumbnailItem } from '../thumbnail-item'
 import { DEFAULT_CATEGORY } from '../../constants'
 
-interface ContentsProps {
+type ContentsProps = {
   posts: any[]
   countOfInitialPost: any
   count: any
   category: any
 }
 
-export const Contents: React.FC<ContentsProps> = ({
+export const Contents = ({
   posts,
   countOfInitialPost,
   count,
   category,
-}) => {
+}: ContentsProps) => {
   const refinedPosts = useMemo(
     () =>
       posts

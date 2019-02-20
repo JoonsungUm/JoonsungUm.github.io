@@ -1,35 +1,34 @@
 import React, { Component } from 'react'
 import ReactDisqusComments from 'react-disqus-comments'
 
-interface DisqusProps {
+type DisqusProps = {
   post: any
   shortName: any
   siteUrl: any
   slug: any
 }
 
-interface Toast {
+type Toast = {
   text: string
 }
 
-interface DisqusState {
+type DisqusState = {
   toasts: Toast[]
 }
 
-export class Disqus extends Component<DisqusProps, DisqusState> {
-  constructor(props: DisqusProps) {
-    super(props)
-    this.state = { toasts: [] }
-    this.notifyAboutComment = this.notifyAboutComment.bind(this)
-    this.onSnackbarDismiss = this.onSnackbarDismiss.bind(this)
-  }
+const initialState = Object.freeze({
+  toasts: [],
+})
 
-  onSnackbarDismiss() {
+export class Disqus extends Component<DisqusProps, DisqusState> {
+  static readonly state = initialState
+
+  onSnackbarDismiss = () => {
     const [, ...toasts] = this.state.toasts
     this.setState({ toasts })
   }
 
-  notifyAboutComment() {
+  notifyAboutComment = () => {
     const toasts = this.state.toasts.slice()
     toasts.push({ text: 'New comment available!!' })
     this.setState({ toasts })

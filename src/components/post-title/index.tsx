@@ -1,3 +1,7 @@
 import React from 'react'
 
-export const PostTitle = ({ title }: any) => <h1>{title}</h1>
+type PostTitleProps = {
+  title: string
+}
+
+export const PostTitle = ({ title }: PostTitleProps) => <h1>{title}</h1>

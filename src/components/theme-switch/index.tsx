@@ -1,7 +1,11 @@
 import React, { useState, useEffect } from 'react'
 import Switch from 'react-switch'
 
-import * as Dom from '../../utils/dom'
+import {
+  addClassToBody,
+  removeClassToBody,
+  hasClassOfBody,
+} from '../../utils/dom'
 import { Themes } from '../../constants'
 
 import './index.scss'
@@ -13,19 +17,19 @@ function getTheme(theme: boolean) {
 function toggleTheme(theme: Themes) {
   switch (theme) {
     case Themes.LIGHT: {
-      Dom.addClassToBody(Themes.LIGHT)
-      Dom.removeClassToBody(Themes.DARK)
+      addClassToBody(Themes.LIGHT)
+      removeClassToBody(Themes.DARK)
       break
     }
     case Themes.DARK: {
-      Dom.addClassToBody(Themes.DARK)
-      Dom.removeClassToBody(Themes.LIGHT)
+      addClassToBody(Themes.DARK)
+      removeClassToBody(Themes.LIGHT)
       break
     }
   }
 }
 
-export const ThemeSwitch: React.FC = () => {
+export const ThemeSwitch = () => {
   const [checked, setChecked] = useState(false)
 
   const handleChange = (changed: boolean) => {
@@ -36,7 +40,7 @@ export const ThemeSwitch: React.FC = () => {
   }
 
   useEffect(() => {
-    const checkTheme = Dom.hasClassOfBody(Themes.DARK)
+    const checkTheme = hasClassOfBody(Themes.DARK)
 
     handleChange(checkTheme)
   }, [])

@@ -3,17 +3,13 @@ import { Link } from 'gatsby'
 
 import './index.scss'
 
-interface HeaderProps {
+type HeaderProps = {
   title: string
   location: Location
   rootPath: string
 }
 
-export const Header: React.FC<HeaderProps> = ({
-  title,
-  location,
-  rootPath,
-}) => {
+export const Header = ({ title, location, rootPath }: HeaderProps) => {
   const isRoot = location.pathname === rootPath
 
   return isRoot ? (

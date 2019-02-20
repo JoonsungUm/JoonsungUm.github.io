@@ -2,7 +2,11 @@ import React from 'react'
 
 import './index.scss'
 
-export const SponsorButton = ({ sponsorId }: any) => (
+type SponsorButtonProps = {
+  sponsorId: string
+}
+
+export const SponsorButton = ({ sponsorId }: SponsorButtonProps) => (
   <div className="sponsor-button">
     <a
       className="bmc-button"

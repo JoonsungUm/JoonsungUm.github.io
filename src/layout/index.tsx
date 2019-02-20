@@ -8,18 +8,19 @@ import { rhythm } from '../utils/typography'
 
 import './index.scss'
 
-interface LayoutProps {
+type LayoutProps = {
   pathPrefix: string
   location: any
   title: string
+  children: import('react').ReactNode
 }
 
-export const Layout: React.FC<LayoutProps> = ({
+export const Layout = ({
   pathPrefix = `/`,
   location,
   title,
   children,
-}) => (
+}: LayoutProps) => (
   <>
     <Top title={title} location={location} rootPath={pathPrefix} />
     <div
