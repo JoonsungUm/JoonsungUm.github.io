@@ -3,19 +3,24 @@ import Helmet from 'react-helmet'
 import { StaticQuery, graphql } from 'gatsby'
 
 interface HeadProps {
-  description?: string,
-  lang?: string,
-  meta?: [],
-  keywords?: string[],
-  title: string,
+  description?: string
+  lang?: string
+  meta?: []
+  keywords?: string[]
+  title: string
 }
 
-export const Head: React.FC<HeadProps> = ({ description, lang = 'en', meta = [], keywords = [], title }) => (
+export const Head: React.FC<HeadProps> = ({
+  description,
+  lang = 'en',
+  meta = [],
+  keywords = [],
+  title,
+}) => (
   <StaticQuery
     query={detailsQuery}
     render={data => {
-      const metaDescription =
-        description || data.site.siteMetadata.description
+      const metaDescription = description || data.site.siteMetadata.description
       return (
         <Helmet
           htmlAttributes={{
@@ -60,10 +65,10 @@ export const Head: React.FC<HeadProps> = ({ description, lang = 'en', meta = [],
             .concat(
               keywords.length > 0
                 ? {
-                  name: `keywords`,
-                  content: keywords.join(`, `),
-                }
-                : []
+                    name: `keywords`,
+                    content: keywords.join(`, `),
+                  }
+                : [],
             )
             .concat(meta)}
         />

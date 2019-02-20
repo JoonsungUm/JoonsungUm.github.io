@@ -12,12 +12,11 @@ import { Contents } from '../components/contents'
 import * as Storage from '../utils/storage'
 import * as IOManager from '../utils/visible'
 
-import { CategoryType } from '../types'
-import { HOME_TITLE } from '../constants'
+import { HOME_TITLE, DEFAULT_CATEGORY } from '../constants'
 
 export default ({ data, location }: any) => {
   const initialCount = Storage.getCount(1)
-  const initialCategory = Storage.getCategory(CategoryType.ALL)
+  const initialCategory = Storage.getCategory(DEFAULT_CATEGORY)
   const [count] = useState(initialCount)
   const countRef = useRef(count)
   const [category, setCategory] = useState(initialCategory)
@@ -26,7 +25,9 @@ export default ({ data, location }: any) => {
   const { siteMetadata } = site
   const { countOfInitialPost } = siteMetadata.configs
   const posts = data.allMarkdownRemark.edges
-  const categories = _.uniq<string>(posts.map(({ node }: any) => node.frontmatter.category))
+  const categories = _.uniq<string>(
+    posts.map(({ node }: any) => node.frontmatter.category),
+  )
 
   useEffect(() => {
     IOManager.init()
@@ -43,13 +44,17 @@ export default ({ data, location }: any) => {
     Storage.setCategory(category)
   })
 
-  const selectCategory = (category: string) => {
-    setCategory(category)
+  const selectCategory = (categoryName: string) => {
+    setCategory(categoryName)
   }
 
   return (
     <IntlProvider locale={siteMetadata.locale}>
-      <Layout pathPrefix={pathPrefix} location={location} title={siteMetadata.title}>
+      <Layout
+        pathPrefix={pathPrefix}
+        location={location}
+        title={siteMetadata.title}
+      >
         <Head title={HOME_TITLE} keywords={siteMetadata.keywords} />
         <Bio />
         <Category

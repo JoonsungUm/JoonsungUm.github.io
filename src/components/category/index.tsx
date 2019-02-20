@@ -11,7 +11,11 @@ interface CategoryProps {
   selectCategory: (category: string) => void
 }
 
-export const Category: React.FC<CategoryProps> = ({ categories, category, selectCategory }) => (
+export const Category: React.FC<CategoryProps> = ({
+  categories,
+  category,
+  selectCategory,
+}) => (
   <ul
     className="category-container"
     role="tablist"

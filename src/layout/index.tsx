@@ -13,7 +13,12 @@ interface LayoutProps {
   title: string
 }
 
-export const Layout: React.FC<LayoutProps> = ({ pathPrefix = `/`, location, title, children }) => (
+export const Layout: React.FC<LayoutProps> = ({
+  pathPrefix = `/`,
+  location,
+  title,
+  children,
+}) => (
   <>
     <Top title={title} location={location} rootPath={pathPrefix} />
     <div

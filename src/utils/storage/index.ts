@@ -20,13 +20,14 @@ export function setCount(val: number): number {
   return setValueToSessionStorage(`${SESSION_STORAGE_KEY}/count`, val)
 }
 
-export function getCategory(defaultValue: string): string {
+export function getCategory<T>(defaultValue: T): T {
   return (
-    getValueFromSessionStorage(`${SESSION_STORAGE_KEY}/category`) || defaultValue
+    getValueFromSessionStorage(`${SESSION_STORAGE_KEY}/category`) ||
+    defaultValue
   )
 }
 
-export function setCategory(val: string): string {
+export function setCategory<T>(val: T): T {
   return setValueToSessionStorage(`${SESSION_STORAGE_KEY}/category`, val)
 }
 

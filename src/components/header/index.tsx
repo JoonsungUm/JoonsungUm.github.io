@@ -9,18 +9,20 @@ interface HeaderProps {
   rootPath: string
 }
 
-export const Header: React.FC<HeaderProps> = ({ title, location, rootPath }) => {
+export const Header: React.FC<HeaderProps> = ({
+  title,
+  location,
+  rootPath,
+}) => {
   const isRoot = location.pathname === rootPath
 
-  return isRoot
-    ? (
-      <h1 className="home-header">
-        <Link to={`/`} className="link">
-          {title}
-        </Link>
-      </h1>
-    )
-    : (
-      <></>
-    )
+  return isRoot ? (
+    <h1 className="home-header">
+      <Link to={`/`} className="link">
+        {title}
+      </Link>
+    </h1>
+  ) : (
+    <></>
+  )
 }

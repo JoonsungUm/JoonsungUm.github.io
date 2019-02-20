@@ -26,7 +26,7 @@ exports.createPages = ({ graphql, actions }) => {
           }
         }
       }
-    `
+    `,
   ).then(result => {
     if (result.errors) {
       throw result.errors
@@ -34,7 +34,7 @@ exports.createPages = ({ graphql, actions }) => {
 
     // Create blog posts pages.
     const posts = result.data.allMarkdownRemark.edges.filter(
-      ({ node }) => !!node.frontmatter.category
+      ({ node }) => !!node.frontmatter.category,
     )
 
     posts.forEach((post, index) => {

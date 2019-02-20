@@ -2,18 +2,12 @@
   "compilerOptions": {
     "baseUrl": ".",
     "paths": {
-      "*": [
-        "types/*"
-      ]
+      "*": ["types/*"]
     },
     "module": "commonjs",
     "target": "esnext",
     "jsx": "react",
-    "lib": [
-      "dom",
-      "es2015",
-      "es2017"
-    ],
+    "lib": ["dom", "es2015", "es2017"],
     "outDir": "./dist/",
     "sourceMap": true,
     "strict": true,
@@ -23,7 +17,5 @@
     "removeComments": false,
     "preserveConstEnums": true
   },
-  "include": [
-    "./src/**/*"
-  ]
+  "include": ["./src/**/*"]
 }

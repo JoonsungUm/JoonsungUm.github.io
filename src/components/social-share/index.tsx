@@ -16,7 +16,7 @@ export const SocialShare: React.FC<SocialShareProps> = ({ title, author }) => {
 
     return shareToTwitter(
       window.location.href,
-      `Recommend on "${title}" written by @${author}`
+      `Recommend on "${title}" written by @${author}`,
     )
   }
 
