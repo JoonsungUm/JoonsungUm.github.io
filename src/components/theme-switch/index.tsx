@@ -2,24 +2,24 @@ import React, { useState, useEffect } from 'react'
 import Switch from 'react-switch'
 
 import * as Dom from '../../utils/dom'
-import { ThemeType } from '../../types'
+import { Themes } from '../../constants'
 
 import './index.scss'
 
-function getTheme(checked: boolean) {
-  return checked ? ThemeType.DARK : ThemeType.LIGHT
+function getTheme(theme: boolean) {
+  return theme ? Themes.DARK : Themes.LIGHT
 }
 
-function toggleTheme(theme: ThemeType) {
+function toggleTheme(theme: Themes) {
   switch (theme) {
-    case ThemeType.LIGHT: {
-      Dom.addClassToBody(ThemeType.LIGHT)
-      Dom.removeClassToBody(ThemeType.DARK)
+    case Themes.LIGHT: {
+      Dom.addClassToBody(Themes.LIGHT)
+      Dom.removeClassToBody(Themes.DARK)
       break
     }
-    case ThemeType.DARK: {
-      Dom.addClassToBody(ThemeType.DARK)
-      Dom.removeClassToBody(ThemeType.LIGHT)
+    case Themes.DARK: {
+      Dom.addClassToBody(Themes.DARK)
+      Dom.removeClassToBody(Themes.LIGHT)
       break
     }
   }
@@ -28,17 +28,17 @@ function toggleTheme(theme: ThemeType) {
 export const ThemeSwitch: React.FC = () => {
   const [checked, setChecked] = useState(false)
 
-  const handleChange = (checked: boolean) => {
-    const theme = getTheme(checked)
+  const handleChange = (changed: boolean) => {
+    const theme = getTheme(changed)
 
-    setChecked(checked)
+    setChecked(changed)
     toggleTheme(theme)
   }
 
   useEffect(() => {
-    const checked = Dom.hasClassOfBody(ThemeType.DARK)
+    const checkTheme = Dom.hasClassOfBody(Themes.DARK)
 
-    handleChange(checked)
+    handleChange(checkTheme)
   }, [])
 
   return (

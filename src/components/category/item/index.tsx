@@ -6,7 +6,11 @@ interface ItemProps {
   selectCategory: any
 }
 
-export const Item: React.FC<ItemProps> = ({ title, category, selectCategory }) => (
+export const Item: React.FC<ItemProps> = ({
+  title,
+  category,
+  selectCategory,
+}) => (
   <li
     className="item"
     role="tab"

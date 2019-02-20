@@ -40,10 +40,12 @@ export function init() {
   return observerTargeting()
 }
 
-export function destroy() {
-  return disconnect().then(() => (observer = null))
+export async function destroy() {
+  await disconnect()
+  return (observer = null)
 }
 
-export function refreshObserver() {
-  return disconnect().then(observerTargeting)
+export async function refreshObserver() {
+  await disconnect()
+  return observerTargeting()
 }

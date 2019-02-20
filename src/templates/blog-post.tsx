@@ -35,7 +35,10 @@ const BlogPost: React.FC<BlogPostProps> = ({ data, pageContext, location }) => {
       <Layout pathPrefix={pathPrefix} location={location} title={title}>
         <Head title={post.frontmatter.title} description={post.excerpt} />
         <PostTitle title={post.frontmatter.title} />
-        <PostDateAndLength date={post.frontmatter.date} length={post.timeToRead} />
+        <PostDateAndLength
+          date={post.frontmatter.date}
+          length={post.timeToRead}
+        />
         <PostContainer html={post.html} />
         <SocialShare title={post.frontmatter.title} author={author} />
         {!!sponsor.buyMeACoffeeId && (

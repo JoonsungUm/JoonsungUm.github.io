@@ -1,12 +1,5 @@
-export enum CategoryType {
-  ALL = 'All'
-}
-
-export enum ThemeType {
-  DARK = 'dark',
-  LIGHT = 'light'
-}
-
 export interface Post {
   node: string
 }
+
+export type EnumLiteralsOf<T extends object> = T[keyof T]

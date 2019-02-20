@@ -6,6 +6,11 @@ interface PostDateAndLengthProps {
   length: number
 }
 
-export const PostDateAndLength: React.FC<PostDateAndLengthProps> = ({ date, length }) => (
-  <p><FormattedRelative value={date} /> &middot; {length} min read</p>
+export const PostDateAndLength: React.FC<PostDateAndLengthProps> = ({
+  date,
+  length,
+}) => (
+  <p>
+    <FormattedRelative value={date} /> &middot; {length} min read
+  </p>
 )

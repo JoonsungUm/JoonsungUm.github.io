@@ -9,8 +9,8 @@ export namespace _default {
   const boldWeight: number
   const headerFontFamily: string[]
   const headerWeight: number
-  function overrideStyles(_ref: any): any
+  function overrideStyles(ref: any): any
   const scaleRatio: number
   const title: string
-  function overrideThemeStyles(_ref: any): any
+  function overrideThemeStyles(ref: any): any
 }
