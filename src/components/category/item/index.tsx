@@ -1,16 +1,12 @@
 import React from 'react'
 
-interface ItemProps {
+type ItemProps = {
   title: string
   category: any
   selectCategory: any
 }
 
-export const Item: React.FC<ItemProps> = ({
-  title,
-  category,
-  selectCategory,
-}) => (
+export const Item = ({ title, category, selectCategory }: ItemProps) => (
   <li
     className="item"
     role="tab"

@@ -1,13 +1,10 @@
 import React, { useEffect, useRef, RefObject } from 'react'
 
-const src = 'https://utteranc.es/client.js'
-const branch = 'source'
-
-interface UtterencesProps {
+type UtterencesProps = {
   repo: string
 }
 
-interface UtterancesConfig {
+type UtterancesConfig = {
   src: string
   repo: string
   branch: string
@@ -17,7 +14,10 @@ interface UtterancesConfig {
   [key: string]: string
 }
 
-export const Utterences: React.FC<UtterencesProps> = ({ repo }) => {
+const src = 'https://utteranc.es/client.js'
+const branch = 'source'
+
+export const Utterences = ({ repo }: UtterencesProps) => {
   const rootElm: RefObject<any> = useRef(null)
 
   useEffect(() => {

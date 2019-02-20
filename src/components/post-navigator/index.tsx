@@ -3,7 +3,11 @@ import { Link } from 'gatsby'
 
 import './index.scss'
 
-export const PostNavigator = ({ pageContext }: any) => {
+type PostNavigatorProps = {
+  pageContext: any
+}
+
+export const PostNavigator = ({ pageContext }: PostNavigatorProps) => {
   const { previous, next } = pageContext
 
   return (

@@ -1,6 +1,6 @@
 import React from 'react'
 
-interface HTMLProps {
+type HTMLProps = {
   htmlAttributes: any
   headComponents: []
   bodyAttributes: any
@@ -9,7 +9,7 @@ interface HTMLProps {
   postBodyComponents: []
 }
 
-export default class HTML extends React.Component<HTMLProps> {
+class HTML extends React.Component<HTMLProps> {
   render() {
     return (
       <html {...this.props.htmlAttributes}>
@@ -36,3 +36,5 @@ export default class HTML extends React.Component<HTMLProps> {
     )
   }
 }
+
+export default HTML

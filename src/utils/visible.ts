@@ -1,5 +1,10 @@
 import * as Dom from './dom'
 
+interface Entry {
+  isIntersecting: boolean
+  target: any
+}
+
 const ROOT_ID = '#___gatsby'
 export const TARGET_CLASS = 'observed'
 const VISIBLE_RECOGNIZE_CLASS = 'visible'
@@ -7,11 +12,6 @@ const INTERSECTION_OBSERVER_ROOT_MARGIN = '20px'
 const INTERSECTION_OBSERVER_THRESHOLD = 0.8
 
 let observer: any
-
-interface Entry {
-  isIntersecting: boolean
-  target: any
-}
 
 function observeCallback(entries: Entry[]) {
   return entries

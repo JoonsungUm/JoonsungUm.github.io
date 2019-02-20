@@ -2,7 +2,7 @@ import React from 'react'
 import Helmet from 'react-helmet'
 import { StaticQuery, graphql } from 'gatsby'
 
-interface HeadProps {
+type HeadProps = {
   description?: string
   lang?: string
   meta?: []
@@ -10,13 +10,13 @@ interface HeadProps {
   title: string
 }
 
-export const Head: React.FC<HeadProps> = ({
+export const Head = ({
   description,
   lang = 'en',
   meta = [],
   keywords = [],
   title,
-}) => (
+}: HeadProps) => (
   <StaticQuery
     query={detailsQuery}
     render={data => {

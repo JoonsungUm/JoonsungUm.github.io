@@ -4,7 +4,11 @@ import { graphql } from 'gatsby'
 import { rhythm } from '../utils/typography'
 import * as Lang from '../constants'
 
-export default ({ data }: any) => {
+type AboutPageProps = {
+  data: any
+}
+
+const AboutPage = ({ data }: AboutPageProps) => {
   const [lang] = useState(Lang.ENGLISH)
   const resumes = data.allMarkdownRemark.edges
 
@@ -27,6 +31,8 @@ export default ({ data }: any) => {
     </div>
   )
 }
+
+export default AboutPage
 
 export const pageQuery = graphql`
   query {

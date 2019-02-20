@@ -14,7 +14,12 @@ import * as IOManager from '../utils/visible'
 
 import { HOME_TITLE, DEFAULT_CATEGORY } from '../constants'
 
-export default ({ data, location }: any) => {
+type IndexPageProps = {
+  data: any
+  location: Location
+}
+
+const IndexPage = ({ data, location }: IndexPageProps) => {
   const initialCount = Storage.getCount(1)
   const initialCategory = Storage.getCategory(DEFAULT_CATEGORY)
   const [count] = useState(initialCount)
@@ -72,6 +77,8 @@ export default ({ data, location }: any) => {
     </IntlProvider>
   )
 }
+
+export default IndexPage
 
 export const pageQuery = graphql`
   query {

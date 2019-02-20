@@ -4,7 +4,7 @@ import { graphql } from 'gatsby'
 import { Layout } from '../layout'
 import { Head } from '../components/head'
 
-interface NotFoundPageProps {
+type NotFoundPageProps = {
   data: any
   location: Location
 }

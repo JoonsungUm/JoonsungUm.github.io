@@ -17,13 +17,13 @@ import { Utterences } from '../components/utterances'
 
 import '../styles/code.scss'
 
-interface BlogPostProps {
+type BlogPostProps = {
   data: any
   pageContext: any
-  location: any
+  location: Location
 }
 
-const BlogPost: React.FC<BlogPostProps> = ({ data, pageContext, location }) => {
+const BlogPost = ({ data, pageContext, location }: BlogPostProps) => {
   const { pathPrefix } = data
   const post = data.markdownRemark
   const metaData = data.site.siteMetadata

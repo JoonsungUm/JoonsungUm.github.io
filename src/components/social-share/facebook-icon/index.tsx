@@ -1,11 +1,15 @@
-import React from 'react'
+import React, { FormEvent } from 'react'
 
 import './index.scss'
+
+type FacebookIconProps = {
+  onClick: (e: FormEvent) => void
+}
 
 const facebookIconPath =
   'M18.77 7.46H14.5v-1.9c0-.9.6-1.1 1-1.1h3V.5h-4.33C10.24.5 9.5 3.44 9.5 5.32v2.15h-3v4h3v12h5v-12h3.85l.42-4z'
 
-export const FacebookIcon = ({ onClick }: any) => (
+export const FacebookIcon = ({ onClick }: FacebookIconProps) => (
   <a
     className="resp-sharing-button__link"
     href="#"
