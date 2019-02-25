@@ -19,11 +19,14 @@ export const Contents = ({
   const refinedPosts = useMemo(
     () =>
       posts
-        .filter(
-          ({ node }: any) =>
+        .filter(({ node }: any) => {
+          const postCategory = node.frontmatter.category
+          return (
             category === DEFAULT_CATEGORY ||
-            node.frontmatter.category === category,
-        )
+            postCategory === category ||
+            postCategory.split(', ').includes(category)
+          )
+        })
         .slice(0, count * countOfInitialPost),
     [category],
   )

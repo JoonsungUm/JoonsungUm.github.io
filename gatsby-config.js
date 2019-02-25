@@ -45,8 +45,10 @@ module.exports = {
             resolve: `gatsby-remark-prismjs`,
             options: {
               inlineCodeMarker: '%',
+              showLineNumbers: true,
             },
           },
+          `gatsby-remark-external-links`,
           `gatsby-remark-copy-linked-files`,
           `gatsby-remark-smartypants`,
           `gatsby-remark-autolink-headers`,
