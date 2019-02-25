@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react'
 import { graphql } from 'gatsby'
-import _ from 'lodash'
+import { uniq } from 'lodash'
 import { IntlProvider } from 'react-intl'
 
 import { Layout } from '../layout'
@@ -30,8 +30,10 @@ const IndexPage = ({ data, location }: IndexPageProps) => {
   const { siteMetadata } = site
   const { countOfInitialPost } = siteMetadata.configs
   const posts = data.allMarkdownRemark.edges
-  const categories = _.uniq<string>(
-    posts.map(({ node }: any) => node.frontmatter.category),
+  const categories: string[] = uniq(
+    posts
+      .map(({ node }: any) => node.frontmatter.category.split(', '))
+      .reduce((prev: string[], cur: string) => [...prev, ...cur], []),
   )
 
   useEffect(() => {
