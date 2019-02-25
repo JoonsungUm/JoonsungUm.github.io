@@ -22,9 +22,12 @@ TypeScript 자체는 빠르게 릴리즈되고 있는데 문서화의 속도가 
 > `interface` 타입과 객체 자체에 대한 `type` 별칭은 많은 점이 비슷하지만, `type` 별칭보다 더 많은 것을 할 수 있기에 `interface`를 사용하는 것을 일반적으로 권장합니다.
 >
 > - `interface`는 `extends`와 `implements` 구문에 사용될 수 있지만, 객체 자체에 대한 `type` 별칭은 그럴 수 없습니다.
->   - _현재 시점에서는 변경되었으며 `type` 정의 안에 `union`이 사용된 경우를 제외하고 `extends`, `implements` 모두 `interface`와 같이 동작한다._
+
+- _현재 시점에서는 변경되었으며 `type` 정의 안에 `union`이 사용된 경우를 제외하고 `extends`, `implements` 모두 `interface`와 같이 동작한다._
+
 > - `interface`는 여러 번 선언해도 병합(declaration merging)될 수 있지만, 객체 자체에 대한 `type` 별칭은 그럴 수 없습니다.
->   - _현재 시점에서도 마찬가지로 `type` 별칭은 선언 병합(declaration merging)을 할 수 없다._
+
+- _현재 시점에서도 마찬가지로 `type` 별칭은 선언 병합(declaration merging)을 할 수 없다._
 
 ### [TypeScript Handbook의 Type Aliases section](https://github.com/Microsoft/TypeScript-Handbook/blob/f728031b7ab1cf54934c86dc41dbf8774369f866/pages/Advanced%20Types.md#type-aliases)
 
@@ -52,13 +55,13 @@ TypeScript 자체는 빠르게 릴리즈되고 있는데 문서화의 속도가 
 > 앞서 언급했듯이, `type` 별칭은 `interface`와 같은 역할을 할 수 있지만 약간의 차이점이 있습니다.
 >
 > 한 가지 차이점은 `interface`가 어디에서나 사용되는 새 이름을 만든다는 것입니다. `type` 별칭으로는 새 이름을 만들 수 없습니다. 예를 들어 오류 메시지에서는 별칭 이름을 사용하지 않습니다. 아래 코드를 편집기에서 `interfaced` 위로 마우스를 가져가면 `interface`가 표시되는 것을 볼 수 있지만, `aliased`는 객체 자체의 타입으로 표시되는 것을 볼 수 있습니다.
->
-> - _현재 시점에서는 위 코드의 `interfaced`와 `aliased` 모두 새로운 이름이 생성된다._
->
+
+- _현재 시점에서는 위 코드의 `interfaced`와 `aliased` 모두 새로운 이름이 생성된다._
+
 > 두 번째로 중요한 차이점은 `type` 별칭은 `extends`/`implements`에 사용될 수 없고, 이를 사용 할 수도 없다는 점입니다. 소프트웨어의 이상적인 특성은 확장할 수 있도록 열려있는 것이기 때문에 가능한 경우 `type` 별칭 대신 `interface`를 사용해야 합니다.
->
-> - _현재 시점에서는 변경되었으며 `type` 정의 안에 `union`이 사용된 경우를 제외하고 `extends`, `implements` 모두 `interface`와 같이 동작한다._
->
+
+- _현재 시점에서는 변경되었으며 `type` 정의 안에 `union`이 사용된 경우를 제외하고 `extends`, `implements` 모두 `interface`와 같이 동작한다._
+
 > 반대로, `interface`로는 모양을 표현할 수 없는 경우와 `union` 혹은 `tuple` 타입이 필요한 경우, 보통 `type` 별칭을 사용합니다.
 
 ## 참고한 자료들
